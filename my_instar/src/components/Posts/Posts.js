@@ -35,7 +35,6 @@ const Posts=({postState, posts}) =>{
         dispatch(deletePost(postId));
         // closeModal();
         dispatch(location.pathname==="/profile"?selectMyPost():selectOtherPost());
-
         setIsOpen(false);
     };
     return (

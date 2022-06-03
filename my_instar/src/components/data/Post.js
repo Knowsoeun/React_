@@ -3,31 +3,31 @@ export const Post = [
       id: 0,
       userId: 0,
       img: "/img/post/1.jpeg",
-      content: "user 0 안녕하세요1",
+      content: "귀욥지?",
   },
   {
     id: 1,
     userId: 0,
     img: "/img/post/7.jpg",
-    content: "user 0 안녕하세요2",
+    content: "난 아기물개야",
 },
   {
     id: 2,
     userId: 0,
     img: "/img/post/4.jpg",
-    content: "user 0 안녕하세요3",
+    content: "난 기린이야",
 },
 {
     id: 3,
     userId: 0,
     img: "/img/post/2.jpeg",
-    content: "user 0 안녕하세요4",
+    content: "난 아기토끼얌",
 },
 {
     id: 4,
     userId: 0,
     img: "/img/post/6.jpg",
-    content: "user 0 안녕하세요5",
+    content: "안녕 난 염소야",
 },
 
 ];

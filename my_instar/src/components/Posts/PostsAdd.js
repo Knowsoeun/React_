@@ -2,7 +2,7 @@ const PostsAdd =() =>{
     const dispatch =useDispatch();
     const [form, setForm]=useState({
         content: "",
-        img: "/img/post/1.jpeg",
+        img: "/img/profile/1.jpg",
     });
     const [isOpen, setIsOpen]=useState(false);
     const closeModal=()=>{
