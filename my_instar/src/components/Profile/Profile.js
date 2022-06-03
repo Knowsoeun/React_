@@ -9,9 +9,10 @@ import ProfileBoard from "../Posts/Posts";
 import Posts from "../Posts/Posts";
 import {useSelector} from "react-redux";
 import { useEffect } from "react";
-import { selectMyPost } from "../../store/posts";
+import posts, { selectMyPost } from "../../store/posts";
 import { useDispatch } from 'react-redux';
 import { selectMyFollower, selectMyFollowing } from "../../store/follows";
+import "./Profile.css";
 
 const Profile = () => {
     /* const {users} = useContext(UserContext);
@@ -34,16 +35,12 @@ const Profile = () => {
     const myPosts =useSelector((state)=> state.posts.myPosts);
    /*  const {follows}=useContext(FollowContext); */
    const follower=useSelector((state)=>state.follows.myFollower);
-   const following=useSelector((state)=>state.follows.myFollowig);
+   const following=useSelector((state)=>state.follows.myFollowing);
     const dispatch=useDispatch();
     const getMyPost=()=>{
         dispatch(selectMyPost());
     };
-    useEffect(()=>{
-        getMyPost();
-        myFollower();
-        myFollowing();
-    }, []);
+
     const myFollower=()=>{
         // return follows.filter((follow) => follow.following ===id);
         dispatch(selectMyFollower());
@@ -52,19 +49,29 @@ const Profile = () => {
         // return follows.filter((follow)=> follow.follower===id);
         dispatch(selectMyFollowing());
     };
+    useEffect(()=>{
+        getMyPost();
+        myFollower();
+        myFollowing();
+    }, []);
 
     return (
         <>
             <ProfileHeader name={name}></ProfileHeader>
             <Container className="ProfileContainer">
                 <ProfileBody 
-                img={img} //
-                follower={follower} 
-                following={following} 
-                posts={myPosts}
-                name={name}
+                    img={img} //
+                    follower={follower} 
+                    following={following} 
+                    posts={myPosts}
+                    name={name}
                 ></ProfileBody>
-                <Posts posts={myPosts.posts} name={name} img={img} postState={myPosts}></Posts>
+                <Posts 
+                    posts={myPosts.posts} 
+                    name={name} 
+                    img={img} 
+                    postState={myPosts}
+                    ></Posts>
             </Container>
         </>
     );

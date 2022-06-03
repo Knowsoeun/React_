@@ -7,6 +7,7 @@ import { useNavigate } from "react-router";
 import {BiLogOut } from "react-icons/bi";
 import { useState  } from "react";
 import ProfileHeaderAddModal from "./ProfileHeaderAddModal";
+import "./ProfileHeader.css";
 
 const ProfileHeader = ({name}) => {
     const dispatch =useDispatch();
@@ -29,14 +30,14 @@ const openModal=()=>{
                 <h2>{name}</h2>
             </div>
             <div>
-                <Button outline onclick={openModal}>
+                {/* <Button outline onClick={openModal}>
                     <GoDiffAdded size={30}></GoDiffAdded>
-                </Button>
+                </Button> */}
                 <Button outline onClick={onClickLogout}>
                     <BiLogOut size={30}></BiLogOut>
                 </Button>
             </div>
-            <ProfileHeaderAddModal isOpen={isOpen} closeModal={closeModal}></ProfileHeaderAddModal>
+            <ProfileHeaderAddModal openModal={openModal} isOpen={isOpen} closeModal={closeModal}></ProfileHeaderAddModal>
         </div>
     );
 };

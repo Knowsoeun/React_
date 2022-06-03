@@ -16,7 +16,7 @@ const Join = () => {
         id: "",
         password: "",
         name: "",
-    });
+    }); 
     const navigate = useNavigate();
     // const {insertUsers, users} = useContext(UserContext);
     const onSubmitLogin = async (e) => {

@@ -54,3 +54,20 @@ export const putPost=async (posts, post, id)=> {
         throw error;
     }
 };
+
+export const getPostMain =async(posts, follows, users) => {
+    try{
+        const filterPostMain=await posts.filter(
+            (
+                {userId} //
+            ) => follows.every(({following})=> userId!==following)
+        );
+        const joinPostMain = await filterPostMain.map((post)=>{
+            const user=user.find((user)=> user.id===post.userId);
+            return {...post, userName:user.name, userImg: user.img};
+        });
+        return joinPostMain;
+    }catch(error){
+        throw error;
+    }
+};

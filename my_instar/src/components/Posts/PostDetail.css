@@ -7,7 +7,7 @@
     border: 1px solid whitesmoke;
     margin-bottom: 4em;
 }
-.profileBoardModalHeader{
+.profileBoardBodyHeader{
     display: flex;
     align-items: center;
     gap: 1em;

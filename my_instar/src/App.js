@@ -15,6 +15,7 @@ import { FollowContext } from "./store/FollowContext";
 import { PostContext } from "./store/PostContext";
 import { Follow } from "./components/data/Follow";
 import { Post } from "./components/data/Post";
+import Layout from "./Layout/Layout";
 
 
 
@@ -54,12 +55,13 @@ function App(){
   };
  
   return (
-    <UserContext.Provider value={{users, insertUsers, updateUsers}}>
-      <PostContext.Provider value={{posts, insertPost, deletePost}}>
-        <FollowContext.Provider value={{follows, insertFollow}}>
+    // <UserContext.Provider value={{users, insertUsers, updateUsers}}>
+    //   <PostContext.Provider value={{posts, insertPost, deletePost}}>
+    //     <FollowContext.Provider value={{follows, insertFollow}}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Main></Main>}>
+          {/* <Route path="/" element={<Main></Main>}> */}
+          <Route path="/" element={<Layout></Layout>}>
             <Route index element ={<Main></Main>}></Route>
             <Route path="shopping" element={<Main></Main>}></Route>
             <Route path="profile" element={<Profile></Profile>}></Route>
@@ -69,9 +71,9 @@ function App(){
           <Route path="/*" element={<Page404></Page404>}></Route>
         </Routes>
         </BrowserRouter> 
-        </FollowContext.Provider>
-        </PostContext.Provider>
-      </UserContext.Provider>
+      //   </FollowContext.Provider>
+      //   </PostContext.Provider>
+      // </UserContext.Provider>
   );
 }
 

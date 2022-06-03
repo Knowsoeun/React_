@@ -43,7 +43,7 @@ const ProfileUpdate = ({ img="/img/profile/1.jpg", name="park", isOpen, modalClo
     const ProfileUpdateHeader =({modalClose, onSubmit})=>{
         return (
             <div className = "profileUpdateHeader">
-                <Button outline color="secondary" oncClick={modalClose}>
+                <Button outline color="secondary" onClick={modalClose}>
                     취소
                 </Button>
                 <b>프로필 수정</b>

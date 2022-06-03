@@ -1,5 +1,5 @@
 import "./Menubar.css";
-import {AiFilHome, AiOutlineSearch, AiOutlineShopping, AiOutlineVideoCamera} from "react-icons/ai";
+import {AiFillHome, AiOutlineSearch, AiOutlineShopping, AiOutlineVideoCamera} from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
 import { Col, Row, Container } from "reactstrap";
 import {BiUserCircle} from "react-icons/bi";
@@ -12,7 +12,7 @@ const Menubar = () => {
             <Row className="MenuContainer">
                 <Col className="Icon">
                     <Link to={"/"}>
-                        <AiFilHome size={30} fill={location.pathname === "/" ? "blue":"black"}></AiFilHome>
+                        <AiFillHome size={30} fill={location.pathname === "/" ? "blue":"black"}></AiFillHome>
                     </Link>
                 </Col>
                 <Col className="Icon">

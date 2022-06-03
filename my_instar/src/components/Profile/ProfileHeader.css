@@ -1,4 +1,4 @@
-.ProfileHeaderBox{
+.ProfileHeaderBox {
     display: flex;
     justify-content: space-between;
     padding: 1em;
@@ -8,4 +8,26 @@
     background-color: white;
     height: 10%;
     align-items: center;
+}
+
+.ProfileContainer {
+    padding-top: 12vh;
+    padding-bottom: 12vh;
+}
+
+.profileUpdateForm {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap: 2em;
+    
+}
+
+.profileUpdateHeader {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid whitesmoke;
+    margin-bottom: 3em;
 }

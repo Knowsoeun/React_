@@ -1,5 +1,5 @@
 import { Post } from "../components/data/Post";
-import { deletePostById, getPostById, getPostByOther, getPostByUserId, postPost } from "./PostsAPI";
+import { deletePostById, getPostById, getPostByOther, getPostByUserId, getPostMain, postPost } from "./PostsAPI";
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import { getPostByKey } from "./usersApi";
 
@@ -29,6 +29,7 @@ const UPDATE_POST="UPDATE_POST";
 const DELETE_POST="DELETE_POST";
 const INSERT_POST="INSERT_POST";
 const SELECT_POST_BY_KEY="SELECT_POST_BY_KEY";
+const SELECT_POST_MAIN="SELECT_POST_MAIN";
 
 export const selectMyPost=createAsyncThunk(SELECT_MY_POST, async(payload, thunkAPI)=> {
     const {myId}=thunkAPI.getState().users;
@@ -116,6 +117,23 @@ export const postsSlice = createSlice({
                 newOtherPosts.loading=false;
                 newOtherPosts.message=error.message;
                 return {...state, otherPosts: newOtherPosts};
+            })
+            .addCase(selectPostMain.pending, (state, {payload})=>{
+                const mainPosts ={...state.mainPosts};
+                mainPosts.loading=true;
+                return {...state, mainPosts};
+            })
+            .addCase(selectPostMain.fulfilled, (state, {payload})=>{
+                const mainPosts ={...state.mainPosts};
+                mainPosts.loading=false;
+                mainPosts.posts=payload;
+                return {...state, mainPosts};
+            })
+            .addCase(selectPostMain.rejected, (state, {error})=>{
+                const mainPosts ={...state.mainPosts};
+                mainPosts.loading=false;
+                mainPosts.message=error.message;
+                return {...state, mainPosts};
             });
     },
 });
@@ -142,5 +160,13 @@ export const selectPostsByKey = createAsyncThunk(
         return myPosts;
     }
 );
+export const selectPostMain=createAsyncThunk(SELECT_POST_MAIN, async(payload, thunkAPI)=>{
+    const {posts}=thunkAPI.getState().posts;
+    const {follows}=thunkAPI.getState().follows.myFollower;
+    const {users} = thunkAPI.getState().users;
+
+    const myPosts=await getPostMain(posts, follows, users);
+    return myPosts;
+});
 
 export default postsSlice.reducer;

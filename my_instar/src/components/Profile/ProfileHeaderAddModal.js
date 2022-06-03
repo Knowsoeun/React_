@@ -2,8 +2,9 @@ import { useState } from "react";
 import { Button, Container, Input, Modal } from "reactstrap";
 import { insertPosts, selectMyPost } from "../../store/posts";
 import { useDispatch } from 'react-redux';
+import { GoDiffAdded } from "react-icons/go";
 
-const ProfileHeaderAddModal =({isOpen, closeModal})=>{
+const ProfileHeaderAddModal =({isOpen, openModal, closeModal})=>{
     const dispatch=useDispatch();
     const [form, setForm]=useState({
         content:"",
@@ -31,6 +32,10 @@ const ProfileHeaderAddModal =({isOpen, closeModal})=>{
     };
     
     return (
+        <>
+        <Button outline onClick={openModal}>
+            <GoDiffAdded size={30}></GoDiffAdded>
+        </Button>
         <Modal isOpen={isOpen} fullscreen toggle={closeModal}>
         <div className="PostsModalHeader">
             <Button close onClick={closeModal}></Button>{" "}
@@ -38,7 +43,7 @@ const ProfileHeaderAddModal =({isOpen, closeModal})=>{
                 <strong>게시물 생성</strong>
             </div>
             <Button color= "info" //
-            online
+            outline
             onClick={onSubmit}
             >
                 글쓰기
@@ -63,6 +68,7 @@ const ProfileHeaderAddModal =({isOpen, closeModal})=>{
             </div>
         </Container>
         </Modal>
+        </>
     );
 };
 
