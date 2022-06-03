@@ -16,7 +16,7 @@ export const Users = [
     {
         id: 2,
         name: "lee",
-        userId: "Kim",
+        userId: "lee",
         img: "/img/profile/3.jpg",
         password: "1234",
     },

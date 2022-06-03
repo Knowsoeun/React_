@@ -30,18 +30,11 @@ export const logoutApi = async (userId)=>{
 };
 
 export const getUserByKey = async(users, key)=> {
-    const findUserByUserId =await users.find((user)=> key.test(user.name));
+    const findUserByUserId =await users.find((user)=> {
+       
+       return key.test(user.name)
+    });
+    console.log(findUserByUserId)
     return findUserByUserId;
 };
 
-export const getPostByKey=async(posts, key, userId)=>{
-    try{
-        const findPostsByUserId = await posts.filter(
-        (  post //
-        ) => userId === post.userId || key.text(post.content)
-        );
-        return findPostsByUserId;
-    }catch(error){
-        throw error;
-    }
-};

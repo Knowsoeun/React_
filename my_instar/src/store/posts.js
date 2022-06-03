@@ -1,7 +1,7 @@
 import { Post } from "../components/data/Post";
 import { deletePostById, getPostById, getPostByOther, getPostByUserId, getPostMain, postPost } from "./PostsAPI";
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import { getPostByKey } from "./usersApi";
+import { getPostByKey } from "./PostsAPI";
 
 const initialState= {
     posts: Post,
@@ -160,9 +160,11 @@ export const insertPosts = createAsyncThunk(
 export const selectPostsByKey = createAsyncThunk(
     SELECT_POST_BY_KEY, //
     async ({ searchKey, userId}, thunkAPI)=>{
+        console.log(userId,searchKey);
         const reg=new RegExp(searchKey, "g");
         const {posts} =thunkAPI.getState().posts;
         const myPosts = await getPostByKey(posts, reg, userId);
+        console.log(myPosts);
         return myPosts;
     }
 );

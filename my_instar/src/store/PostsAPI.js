@@ -76,8 +76,9 @@ export const getPostByKey=async(posts, key, userId)=>{
     try{
         const findPostsByUserId = await posts.filter(
         (  post //
-        ) => userId === post.userId || key.text(post.content)
+        ) => userId === post.userId || key.test(post.content)
         );
+
         return findPostsByUserId;
     }catch(error){
         throw error;

@@ -127,9 +127,9 @@ export const updateUsers=createAsyncThunk(UPDATE_USERS, async(user, thunkAPI)=>{
 
 export const selectUserByKey=createAsyncThunk(SELECT_USER_BY_KEY, async(key, thunkAPI)=>{
     const {users}=thunkAPI.getState().users;
+    console.log(key)
     const reg=new RegExp(key, "g");
     const newUsers=await getUserByKey(users, reg);
-
     return newUsers.id;
 });
 

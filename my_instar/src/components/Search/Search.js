@@ -43,6 +43,7 @@ const Search=()=>{
         await dispatch(selectPostsByKey({searchKey, userId: findUserId}));
     };
 
+
     return (
         <div>
             <SearchBar
