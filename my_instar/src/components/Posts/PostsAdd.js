@@ -1,3 +1,7 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { insertPosts, selectMyPost } from "../../store/posts";
+
 const PostsAdd =() =>{
     const dispatch =useDispatch();
     const [form, setForm]=useState({

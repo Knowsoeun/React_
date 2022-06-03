@@ -1,9 +1,15 @@
 import { useEffect } from "react";
 import { Card, Container, Spinner } from "reactstrap";
 import { selectMyFollower } from "./store/follows";
+import "./Main.css";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { selectPostMain } from "./store/posts";
+import PostsAdd from "./components/Posts/PostsAdd";
 
 const Main=()=>{
     const mainPosts=useSelector((state)=> state.posts.mainPosts);
+    console.log(mainPosts);
     const dispatch =useDispatch();
     const followOtherPost=async()=>{
         await dispatch(selectMyFollower());
@@ -49,23 +55,16 @@ const MainCard =({post })=>{
                         alt="userImg"
                         ></img>
                 </div>
+                {post.userName}
+                </div>
                 <img 
                     className="PostsBodyImg"
                     src={post?.img} //
                     alt="postimg"
                     ></img>
                     <p>{post?.content}</p>
-            </div>
+            
         </Card>
     );
 };
 
-export const getPostMain =async(posts, follows, users) => {
-    try{
-        const filterPostMain=await posts.filter(
-            (
-                {userId} //
-            )
-        )
-    }
-}

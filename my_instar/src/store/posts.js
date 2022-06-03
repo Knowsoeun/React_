@@ -20,6 +20,11 @@ const initialState= {
         loading:false,
         message:"",
     },
+    mainPosts: {
+        posts: [],
+        loading: false,
+        message: "",
+    },
 };
 
 // 절대 변하지 않을 상수는 대문자로 쓴다. 
@@ -99,6 +104,7 @@ export const postsSlice = createSlice({
             })
             .addCase(selectPostsByKey.pending, (state, {payload})=> {
                 const newOtherPosts = { ...state.otherPosts};
+                newOtherPosts.loading = true;
                 return {...state, otherPosts:newOtherPosts};
             })
             .addCase(selectPostsByKey.fulfilled, (state, {payload})=>{
@@ -163,8 +169,9 @@ export const selectPostsByKey = createAsyncThunk(
 export const selectPostMain=createAsyncThunk(SELECT_POST_MAIN, async(payload, thunkAPI)=>{
     const {posts}=thunkAPI.getState().posts;
     const {follows}=thunkAPI.getState().follows.myFollower;
+    
     const {users} = thunkAPI.getState().users;
-
+    console.log(users)
     const myPosts=await getPostMain(posts, follows, users);
     return myPosts;
 });

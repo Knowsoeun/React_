@@ -19,13 +19,13 @@ export const Post = [
 },
 {
     id: 3,
-    userId: 0,
+    userId: 2,
     img: "/img/post/2.jpeg",
     content: "난 아기토끼얌",
 },
 {
     id: 4,
-    userId: 0,
+    userId: 1,
     img: "/img/post/6.jpg",
     content: "안녕 난 염소야",
 },

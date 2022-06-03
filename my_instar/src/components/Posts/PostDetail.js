@@ -57,10 +57,10 @@ const PostDetail = ({isOpen, clickPost, closeModal, onClickDelete, user})=>{
                 )}
            </div>
             <Container>
-                <div className="PostsBody">
-                    <div className="PostsBodyHeader">
-                        <div className="PostsBodyHeaderImgBox">
-                            <img className="PostsdBodyHeaderImg" src={user.img} alt="userImg"></img>
+                <div className="profileBoardBody">
+                    <div className="profileBoardBodyHeader">
+                        <div className="profileBoardBodyHeaderImgBox">
+                            <img className="profileBoardBodyHeaderImg" src={user.img} alt="userImg"></img>
                         </div>
                         {user.name}
                         {user.id===myId?(
@@ -75,7 +75,7 @@ const PostDetail = ({isOpen, clickPost, closeModal, onClickDelete, user})=>{
                             </Button>
                         )}
                     </div>
-                    <img className="PostsBodyImg" src={clickPost?.img} alt="postimg"></img>
+                    <img className="profileBoardBodyImg" src={clickPost?.img} alt="postimg"></img>
                     <p>{clickPost?.content}</p>
                 </div>
             </Container>

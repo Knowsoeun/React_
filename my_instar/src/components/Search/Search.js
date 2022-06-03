@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { useContext, useState } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { PostContext } from "../../store/PostContext";
 import { selectOtherPost, selectPostsByKey } from "../../store/posts";
 import { UserContext } from "../../store/UserContext"
@@ -8,6 +10,7 @@ import Posts from "../Posts/Posts";
 import SearchBar from "./SearchBar";
 
 const Search=()=>{
+    
     /* const {users}=useContext(UserContext);
     const id=Number(localStorage.getItem("id"));
     const {posts} =useContext(PostContext);
@@ -45,7 +48,8 @@ const Search=()=>{
             <SearchBar
             searchKey={searchKey}
             setSearchKey={setSearchKey}//
-            onSubmitSearch={onSumbitSearch}></SearchBar>
+            onSubmitSearch={onSubmitSearch}
+            ></SearchBar>
             <Posts posts={otherPosts.posts} postState={otherPosts}></Posts>
         </div>
     );

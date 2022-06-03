@@ -3,7 +3,7 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {deleteFollowing, getFollowerByMe, getFollowingByMe, getFollowingByMeOne, postFollower} from "./followsApi";
 
 const initialState ={
-    folows:Follow,
+    follows:Follow,
     myFollowing: {
         follows: [],
         loading: false,

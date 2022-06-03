@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 import Join from "./components/Join/Join";
 import BootstrapLogin from "./components/Login/BootstrapLogin";
-import Main from "./components/Main";
+import Main from "./Main";
 import Page404 from "./components/Page404";
 import { useState } from "react";
 import { Users } from "./components/Login/User";
@@ -16,6 +16,7 @@ import { PostContext } from "./store/PostContext";
 import { Follow } from "./components/data/Follow";
 import { Post } from "./components/data/Post";
 import Layout from "./Layout/Layout";
+import Search from "./components/Search/Search";
 
 
 
@@ -65,6 +66,7 @@ function App(){
             <Route index element ={<Main></Main>}></Route>
             <Route path="shopping" element={<Main></Main>}></Route>
             <Route path="profile" element={<Profile></Profile>}></Route>
+            <Route path="search" element={<Search></Search>}></Route>
           </Route>
           <Route path="/login" element={<BootstrapLogin></BootstrapLogin>}></Route>
           <Route path="/join" element={<Join></Join>}></Route>
