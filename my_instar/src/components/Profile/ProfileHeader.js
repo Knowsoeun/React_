@@ -36,8 +36,9 @@ const openModal=()=>{
                 <Button outline onClick={onClickLogout}>
                     <BiLogOut size={30}></BiLogOut>
                 </Button>
+                <ProfileHeaderAddModal openModal={openModal} isOpen={isOpen} closeModal={closeModal}></ProfileHeaderAddModal>
             </div>
-            <ProfileHeaderAddModal openModal={openModal} isOpen={isOpen} closeModal={closeModal}></ProfileHeaderAddModal>
+            
         </div>
     );
 };
