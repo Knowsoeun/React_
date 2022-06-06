@@ -1,4 +1,7 @@
-### 일정 관리 앱 만들기
+## 일정 관리 앱 만들기
+
+![image](https://user-images.githubusercontent.com/63652571/172186154-157e22fc-74fe-433b-a22b-ae236f41faef.png)
+
 <!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
