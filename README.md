@@ -1,0 +1,1 @@
+# poscoICT_mini
