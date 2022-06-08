@@ -8,4 +8,5 @@
 3. 개인브랜치 만들기
 ```
 
+- [노션에서 프로젝트 기획안 보기](https://zany-griffin-32a.notion.site/POSCO-ICT-3-3-tastybit-f6d5064517404c99863607ad1b3dcc41)
 - [프론트앤드 ](https://github.com/xsa1113/poscoICT_mini/tree/main/FrontEnd/frontend)
